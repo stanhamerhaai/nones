@@ -89,7 +89,113 @@ async def forward_messages(app, groups, channel_username, total_group, ranbefore
 
                 elif 'Spam' in str(e):
                     print(Fore.RED + f' SPAM Error while sending to {group} - {datetime.datetime.now().strftime("%H:%M:%S")}')
-                    await app.send_message('@SpamBot', '/start')
+                        await app.send_message('@SpamBot', 'This is a mistake')
+                        await asyncio.sleep(5)
+                        await app.send_message('@SpamBot', 'Yes')
+                        await asyncio.sleep(5)
+                        await app.send_message('@SpamBot', 'No! Never did that!')
+                        await asyncio.sleep(5)
+                        complaints = [
+                            "My Telegram account was suddenly limited without any reason. Please help!",
+                            "I can't access certain features on Telegram because my account is limited. This is frustrating!",
+                            "Something went wrong, and now my Telegram account is limited. I need assistance immediately.",
+                            "Why was my Telegram account limited? I haven't violated any rules!",
+                            "Telegram restricted my account, and now I can't use it properly. Can someone look into this?",
+                            "My Telegram account was unfairly limited, and I have no idea why. Please fix this.",
+                            "I'm unable to use Telegram as usual because my account is suddenly limited.",
+                            "My account was limited on Telegram, and I don’t know what went wrong.",
+                            "Please help! My Telegram account was limited for no apparent reason.",
+                            "I can't send messages or access groups on Telegram because my account was limited.",
+                            "My Telegram account was limited, and I can't figure out why. Please assist.",
+                            "Why did my Telegram account get limited? I didn't do anything wrong!",
+                            "My account is restricted on Telegram, and I'm not sure what happened.",
+                            "Telegram limited my account, and I urgently need this issue resolved.",
+                            "I can't use Telegram properly because my account was randomly limited.",
+                            "My Telegram account is limited, and I don’t understand what went wrong.",
+                            "Why was my Telegram account restricted? I need help to resolve this.",
+                            "Something went wrong, and my Telegram account is now limited.",
+                            "My account was limited on Telegram without any explanation. Please help!",
+                            "I can’t access Telegram features because my account was suddenly limited.",
+                            "Why is my Telegram account limited? I haven't done anything wrong!",
+                            "My account was unjustly limited on Telegram, and I need assistance.",
+                            "I can't use Telegram properly because my account was restricted.",
+                            "My Telegram account was limited, and I can't figure out why.",
+                            "Why did Telegram limit my account? I need help resolving this.",
+                            "My Telegram account is restricted, and I'm not sure why.",
+                            "Telegram unfairly limited my account, and I need help fixing this.",
+                            "I can't access my Telegram account because it's been limited.",
+                            "My account on Telegram was randomly restricted. Please assist!",
+                            "I’m unable to use Telegram because my account is limited.",
+                            "Telegram limited my account, and I need help to restore it.",
+                            "My Telegram account was limited for no reason. Please help me fix this.",
+                            "Why is my account restricted on Telegram? I didn't do anything wrong.",
+                            "My account was limited on Telegram without any reason.",
+                            "I can’t use Telegram normally because my account is restricted.",
+                            "Telegram restricted my account, and I urgently need help.",
+                            "My Telegram account is limited, and I don't know why.",
+                            "Please help! My Telegram account was unfairly restricted.",
+                            "My account was limited on Telegram, and I need assistance.",
+                            "Why did my Telegram account get limited? I need help.",
+                            "I can't use Telegram properly because my account was limited.",
+                            "My Telegram account was limited, and I don't understand why.",
+                            "Telegram restricted my account, and I need assistance.",
+                            "Why was my Telegram account suddenly limited?",
+                            "I can't access certain features on Telegram because my account is restricted.",
+                            "Something went wrong, and now my Telegram account is limited.",
+                            "My Telegram account was unfairly limited. Please help me resolve this.",
+                            "Why did Telegram limit my account? I didn’t do anything wrong!",
+                            "My account was limited on Telegram, and I don’t know why.",
+                            "I can't use Telegram as usual because my account is limited.",
+                            "Please help! My Telegram account was limited without reason.",
+                            "My account is restricted on Telegram, and I need help.",
+                            "Telegram limited my account, and I urgently need help to fix it.",
+                            "My Telegram account is limited, and I don’t understand why.",
+                            "Why was my Telegram account restricted? I need assistance.",
+                            "Something went wrong, and now my account is limited on Telegram.",
+                            "My account was limited on Telegram without any explanation.",
+                            "I can’t use Telegram normally because my account is limited.",
+                            "Telegram restricted my account, and I need help to resolve this.",
+                            "My Telegram account is limited, and I don't know what happened.",
+                            "Please help! My Telegram account was unfairly limited.",
+                            "My account was limited on Telegram, and I need help.",
+                            "Why did my Telegram account get limited? I need help fixing this.",
+                            "I can't use Telegram properly because my account was randomly limited.",
+                            "My Telegram account was limited, and I can't figure out why.",
+                            "Telegram restricted my account, and I urgently need assistance.",
+                            "Why was my Telegram account suddenly limited? Please help.",
+                            "I can't access Telegram features because my account is limited.",
+                            "Something went wrong, and now my Telegram account is restricted.",
+                            "My Telegram account was limited without any reason. Please help.",
+                            "Why did Telegram limit my account? I didn’t do anything wrong!",
+                            "My account was limited on Telegram, and I don’t know what went wrong.",
+                            "I can't use Telegram properly because my account is limited.",
+                            "Please help! My Telegram account was limited for no reason.",
+                            "My account is restricted on Telegram, and I don't know why.",
+                            "Telegram limited my account, and I urgently need help.",
+                            "My Telegram account is limited, and I don’t know what happened.",
+                            "Why was my Telegram account restricted? I need help fixing this.",
+                            "Something went wrong, and now my account is limited on Telegram.",
+                            "My Telegram account was unfairly limited without explanation.",
+                            "I can’t use Telegram normally because my account is limited.",
+                            "Telegram restricted my account, and I urgently need help.",
+                            "My Telegram account is limited, and I don't know why.",
+                            "Please help! My Telegram account was limited without reason.",
+                            "My account was limited on Telegram, and I need help to resolve this.",
+                            "Why did my Telegram account get limited? I didn't do anything wrong.",
+                            "I can't use Telegram properly because my account was suddenly limited.",
+                            "My Telegram account was limited, and I can't figure out why.",
+                            "Telegram restricted my account, and I need assistance immediately.",
+                            "Why was my Telegram account suddenly limited? Please help me.",
+                            "I can't access Telegram features because my account is limited.",
+                            "Something went wrong, and now my Telegram account is unfairly limited."
+                        ]
+                        generated_message = random.choice(complaints)
+
+                        await app.send_message('@SpamBot', generated_message)
+                        await asyncio.sleep(900)
+                    except Exception as e:
+                        print(e)
+                        await asyncio.sleep(900)
 
                 elif 'USERNAME_NOT_OCCUPIED' in str(e):
                     print(Fore.RED + f'This nigger group does not even exist nigga - {datetime.datetime.now().strftime("%H:%M:%S")}')
