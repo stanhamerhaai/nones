@@ -14,7 +14,7 @@ async def forward_messages(app, groups, channel_username, total_group, ranbefore
     for group in groups:
         try:
             await app.forward_messages(group, channel_username, message)
-            
+            os.system(f'title good - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
             done += 1
             sys.stderr.close()
             sys.stderr = sys.stderr
@@ -91,7 +91,7 @@ async def forward_messages(app, groups, channel_username, total_group, ranbefore
                 elif 'Spam' in str(e):
                     try:
                         print(Fore.RED + f' SPAM Error while sending to {group} - {datetime.datetime.now().strftime("%H:%M:%S")}')
-
+                        os.system(f'title Spam - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
                         await app.send_message('@SpamBot', '/start')
                         await asyncio.sleep(5)
                         await app.send_message('@SpamBot', 'This is a mistake')
