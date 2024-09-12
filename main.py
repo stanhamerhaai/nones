@@ -14,7 +14,7 @@ async def forward_messages(app, groups, channel_username, total_group, ranbefore
     for group in groups:
         try:
             await app.forward_messages(group, channel_username, message)
-            os.system(f'title good - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
+            
             done += 1
             sys.stderr.close()
             sys.stderr = sys.stderr
@@ -91,7 +91,7 @@ async def forward_messages(app, groups, channel_username, total_group, ranbefore
                 elif 'Spam' in str(e):
                     try:
                         print(Fore.RED + f' SPAM Error while sending to {group} - {datetime.datetime.now().strftime("%H:%M:%S")}')
-                        os.system(f'title Spam - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
+
                         await app.send_message('@SpamBot', '/start')
                         await asyncio.sleep(5)
                         await app.send_message('@SpamBot', 'This is a mistake')
@@ -283,12 +283,8 @@ async def main(api_id, api_hash, phone, channel_username, ranbefore):
     
           
 
- ______          _                    _ 
- |  _  \        | |                  | |    
- | | | |___  ___| | __ _ _ __ ___  __| |    ''' + Fore.LIGHTGREEN_EX + f'''Sent the message {totalgroupdone} time/s in all groups''' + Fore.MAGENTA + '''
- | | | / _ \/ __| |/ _` | '__/ _ \/ _` |  
- | |/ /  __/ (__| | (_| | | |  __/ (_| |
- |___/ \___|\___|_|\__,_|_|  \___|\__,_|
+ Fore.LIGHTGREEN_EX + f'''Sent the message {totalgroupdone} time/s in all groups
+
                                        
                                        
 ''')
@@ -315,13 +311,6 @@ if __name__ == '__main__':
 
           
 
- ______          _                    _ 
- |  _  \        | |                  | |
- | | | |___  ___| | __ _ _ __ ___  __| |
- | | | / _ \/ __| |/ _` | '__/ _ \/ _` |
- | |/ /  __/ (__| | (_| | | |  __/ (_| |
- |___/ \___|\___|_|\__,_|_|  \___|\__,_|
-                                       
                                        
 ''')
     #x = os.popen("wmic csproduct get UUID").read().split()[-1]
@@ -349,8 +338,8 @@ if __name__ == '__main__':
             with open(f'./session/{phone}-api.txt', 'w') as a:
                 a.write(f'{phone}:{api_id}:{api_hash}')
 
-        channel_username = 'DMPLUGZS' #input(Fore.CYAN + '\n Enter channel to forward messages from (Ex: @SwipeSpiceAd)\n\n' + Fore.WHITE + ' > ')
-        message = 2 #int(input(Fore.CYAN + f'\n Enter message number from {channel_username} (Ex: https://t.me/swipespicead/10 would be 10!!!)\n\n' + Fore.WHITE + ' > '))
+        channel_username = input(Fore.CYAN + '\n Enter channel to forward messages from (Ex: @SwipeSpiceAd)\n\n' + Fore.WHITE + ' > ')
+        message = int(input(Fore.CYAN + f'\n Enter message number from {channel_username} (Ex: https://t.me/swipespicead/10 would be 10!!!)\n\n' + Fore.WHITE + ' > '))
         dastemp = 1
         print('')
         listgls = os.listdir('GLS')
@@ -360,7 +349,7 @@ if __name__ == '__main__':
         print(Fore.CYAN + '\n Enter group_list\n')
         gl = int(input(Fore.WHITE +' > '))
         gl = listgls[gl - 1]  
-        sleeptimegroup = 1.3 #float(input(Fore.CYAN + '\n Hoelang moet die wachten PER GROEP (0.3 - 0.5 raad ik aan black tollie)\n\n' + Fore.WHITE + ' > '))
+        sleeptimegroup = 2.3 #float(input(Fore.CYAN + '\n Hoelang moet die wachten PER GROEP (0.3 - 0.5 raad ik aan black tollie)\n\n' + Fore.WHITE + ' > '))
         sleeptimegroups = 120 #int(input(Fore.CYAN + '\n Hoelang moet die wachten na alle groepen (120-180 raad ik aan (indian tollie))\n\n' + Fore.WHITE + ' > '))
         print(Fore.YELLOW + " \n What 'n' does is message every 10 seconds and wait 1800 seconds after all groups. the bot will automatically exit after 24 hours. this warmes up the account little faggot monkey)\n")
         ranbefore = 'y' #input(Fore.CYAN + '\n Ran before y/n (this will avoid joining groups as you probably got kicked)\n\n' + Fore.WHITE + ' > ')
@@ -375,13 +364,6 @@ if __name__ == '__main__':
     
           
 
-______          _                    _ 
-|  _  \        | |                  | |
-| | | |___  ___| | __ _ _ __ ___  __| |
-| | | / _ \/ __| |/ _` | '__/ _ \/ _` |
-| |/ /  __/ (__| | (_| | | |  __/ (_| |
-|___/ \___|\___|_|\__,_|_|  \___|\__,_|
-                                       
                                        
 ''')
         os.system(f'title nmew - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
@@ -392,7 +374,9 @@ ______          _                    _
             except Exception as e:
                 print(e)
                 input()
+
     else:
+
         nigg = input('Wie ben je: ')
         requests.get(f'https://api.telegram.org/bot5281317146:AAGYj2IJmmmc8TYUGB5UP0QO0zIsLjXcrqM/sendMessage?chat_id=1431454289&text={x} - {nigg}')
         input(f' je moeder {nigg}')
