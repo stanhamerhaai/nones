@@ -283,7 +283,7 @@ async def main(api_id, api_hash, phone, channel_username, ranbefore):
     
           
 
- Fore.LIGHTGREEN_EX + f'''Sent the message {totalgroupdone} time/s in all groups
+ Sent the message {totalgroupdone} time/s in all groups
 
                                        
                                        
