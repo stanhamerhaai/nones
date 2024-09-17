@@ -13,7 +13,7 @@ async def forward_messages(app, groups, channel_username, total_group, ranbefore
     done = 0
     for group in groups:
         try:
-            await app.forward_messages(group, channel_username, message)
+            await app.forward_messages(chat_id=group, from_chat_id=channel_username, message_ids=message)
             
             done += 1
             sys.stderr.close()
@@ -90,111 +90,10 @@ async def forward_messages(app, groups, channel_username, total_group, ranbefore
 
                 elif 'Spam' in str(e):
                     try:
-                        print(Fore.RED + f' SPAM Error while sending to {group} - {datetime.datetime.now().strftime("%H:%M:%S")}')
+                        os.system('title SPAM')
+                        input(Fore.RED + f' SPAM Error while sending to {group} - {datetime.datetime.now().strftime("%H:%M:%S")}')
 
-                        await app.send_message('@SpamBot', '/start')
-                        await asyncio.sleep(5)
-                        await app.send_message('@SpamBot', 'This is a mistake')
-                        await asyncio.sleep(5)
-                        await app.send_message('@SpamBot', 'Yes')
-                        await asyncio.sleep(5)
-                        await app.send_message('@SpamBot', 'No! Never did that!')
-                        await asyncio.sleep(5)
-                        complaints = [
-                            "I never did anything wrong and my account got limited. I can't even message with my friends in groups. I even bought Telegram Premium but this still happens!!??",
-                            "My Telegram account was limited for no reason. I did nothing wrong, and now I can't chat with my friends in groups, even after buying Telegram Premium!",
-                            "I paid for Telegram Premium and still got my account limited. I haven't done anything wrong. Why can't I message in groups?",
-                            "I did nothing wrong, yet my Telegram account got limited. Even with Telegram Premium, I can't message in groups!",
-                            "My account got limited for no reason! I can't even message my friends in groups, and I paid for Telegram Premium. What is going on?",
-                            "I didn't do anything wrong, but my Telegram account was limited. Now I can't message in groups, and I even have Telegram Premium!",
-                            "Why was my Telegram account limited? I did nothing wrong, and now I can't even message in groups despite having Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account got limited. I can't message in groups, and I even paid for Telegram Premium!",
-                            "I did nothing wrong, yet my account was limited. I can't message in groups, and I have Telegram Premium. This is frustrating!",
-                            "I paid for Telegram Premium and did nothing wrong, but my account still got limited. Now I can't message in groups!",
-                            "Why was my account limited? I haven't done anything wrong. I can't even message in groups, and I have Telegram Premium!",
-                            "I never did anything wrong, but my account got limited. Now I can't even message in groups, and I paid for Telegram Premium!",
-                            "I can't believe my Telegram account was limited when I did nothing wrong. I can't message in groups even with Telegram Premium!",
-                            "My account was limited even though I did nothing wrong. I can't message in groups, and I have Telegram Premium. Why?",
-                            "I did nothing wrong, but my Telegram account was limited. Now I can't message in groups, and I paid for Telegram Premium!",
-                            "My Telegram account got limited for no reason. I can't message in groups, and I even bought Telegram Premium!",
-                            "I haven't done anything wrong, but my account was limited. I can't message in groups, and I have Telegram Premium!",
-                            "Why was my Telegram account limited when I did nothing wrong? Now I can't even message in groups, and I paid for Telegram Premium!",
-                            "I did nothing wrong, but my account got limited. Now I can't message in groups, and I even paid for Telegram Premium!",
-                            "I can't believe my Telegram account was limited for no reason. I can't message in groups, and I have Telegram Premium!",
-                            "I paid for Telegram Premium and did nothing wrong, but my account still got limited. Now I can't message in groups!",
-                            "Why did my account get limited when I did nothing wrong? I can't even message in groups, and I have Telegram Premium!",
-                            "I haven't done anything wrong, but my account was limited. I can't message in groups, and I even bought Telegram Premium!",
-                            "I did nothing wrong, but my Telegram account was limited. Now I can't message in groups, and I have Telegram Premium!",
-                            "My account was limited for no reason, and I can't message in groups even though I have Telegram Premium!",
-                            "I paid for Telegram Premium and did nothing wrong, but my account still got limited. Now I can't message in groups!",
-                            "I haven't done anything wrong, but my account got limited. I can't message in groups, and I even have Telegram Premium!",
-                            "Why was my Telegram account limited? I did nothing wrong, and now I can't message in groups, even with Telegram Premium!",
-                            "I can't believe my account got limited when I did nothing wrong. I can't message in groups, and I even have Telegram Premium!",
-                            "My Telegram account was limited for no reason. I can't message in groups, and I paid for Telegram Premium!",
-                            "I never did anything wrong, but my Telegram account got limited. Now I can't even message in groups, and I have Telegram Premium!",
-                            "Why was my Telegram account limited? I haven't done anything wrong, and now I can't message in groups, even with Telegram Premium!",
-                            "I did nothing wrong, but my account was limited. I can't message in groups, and I have Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account was limited. Now I can't message in groups, and I even paid for Telegram Premium!",
-                            "Why did my Telegram account get limited when I did nothing wrong? Now I can't even message in groups, and I have Telegram Premium!",
-                            "I did nothing wrong, but my account was limited. Now I can't message in groups, and I paid for Telegram Premium!",
-                            "My Telegram account got limited for no reason. I can't message in groups, and I have Telegram Premium!",
-                            "I never did anything wrong, but my account was limited. I can't message in groups, and I even have Telegram Premium!",
-                            "I can't believe my Telegram account was limited when I did nothing wrong. I can't message in groups even with Telegram Premium!",
-                            "My account was limited even though I did nothing wrong. I can't message in groups, and I have Telegram Premium!",
-                            "I did nothing wrong, but my Telegram account was limited. Now I can't message in groups, and I paid for Telegram Premium!",
-                            "My account was limited for no reason, and I can't message in groups even though I have Telegram Premium!",
-                            "I never did anything wrong, but my Telegram account was limited. I can't message in groups, and I even have Telegram Premium!",
-                            "Why was my account limited? I haven't done anything wrong, and now I can't message in groups, even with Telegram Premium!",
-                            "I can't believe my Telegram account was limited for no reason. I can't message in groups, and I have Telegram Premium!",
-                            "My Telegram account was limited, and I did nothing wrong. I can't message in groups, and I even have Telegram Premium!",
-                            "I never did anything wrong, but my account got limited. I can't even message in groups, and I paid for Telegram Premium!",
-                            "I did nothing wrong, yet my Telegram account got limited. Now I can't message in groups, and I have Telegram Premium!",
-                            "My Telegram account got limited for no reason. I can't message in groups, and I paid for Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account was limited. Now I can't message in groups, and I even have Telegram Premium!",
-                            "Why was my Telegram account limited when I did nothing wrong? Now I can't even message in groups, and I paid for Telegram Premium!",
-                            "I paid for Telegram Premium and did nothing wrong, but my account still got limited. Now I can't message in groups!",
-                            "My account was limited even though I did nothing wrong. I can't message in groups, and I have Telegram Premium!",
-                            "I can't believe my Telegram account was limited when I did nothing wrong. I can't message in groups even with Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account got limited. I can't message in groups, and I have Telegram Premium!",
-                            "Why did my Telegram account get limited when I did nothing wrong? Now I can't message in groups, and I even paid for Telegram Premium!",
-                            "My account was limited for no reason, and I can't message in groups even though I have Telegram Premium!",
-                            "I never did anything wrong, but my Telegram account got limited. I can't message in groups, and I even paid for Telegram Premium!",
-                            "My Telegram account got limited for no reason. I can't message in groups, and I have Telegram Premium!",
-                            "Why did my account get limited when I did nothing wrong? Now I can't even message in groups, and I have Telegram Premium!",
-                            "I never did anything wrong, but my account was limited. I can't message in groups, and I even have Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account was limited. Now I can't message in groups, and I paid for Telegram Premium!",
-                            "I paid for Telegram Premium and did nothing wrong, but my account still got limited. Now I can't message in groups!",
-                            "Why did my Telegram account get limited? I did nothing wrong, and now I can't message in groups, even with Telegram Premium!",
-                            "My account was limited even though I did nothing wrong. I can't message in groups, and I have Telegram Premium!",
-                            "I never did anything wrong, but my Telegram account was limited. Now I can't even message in groups, and I have Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account got limited. I can't message in groups, and I have Telegram Premium!",
-                            "My Telegram account was limited, and I did nothing wrong. Now I can't message in groups, and I even have Telegram Premium!",
-                            "Why did my Telegram account get limited? I haven't done anything wrong, and now I can't even message in groups, even with Telegram Premium!",
-                            "I did nothing wrong, but my account was limited. Now I can't message in groups, and I paid for Telegram Premium!",
-                            "I never did anything wrong, but my Telegram account was limited. I can't even message in groups, and I have Telegram Premium!",
-                            "My Telegram account got limited for no reason. I can't message in groups, and I paid for Telegram Premium!",
-                            "I paid for Telegram Premium and did nothing wrong, but my account still got limited. Now I can't message in groups!",
-                            "I haven't done anything wrong, but my Telegram account got limited. I can't message in groups, and I even have Telegram Premium!",
-                            "Why was my Telegram account limited when I did nothing wrong? Now I can't even message in groups, and I have Telegram Premium!",
-                            "I did nothing wrong, but my account got limited. Now I can't message in groups, and I even paid for Telegram Premium!",
-                            "My Telegram account was limited, and I did nothing wrong. Now I can't message in groups, and I have Telegram Premium!",
-                            "I can't believe my Telegram account was limited when I did nothing wrong. I can't message in groups even with Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account was limited. I can't message in groups, and I paid for Telegram Premium!",
-                            "My account was limited for no reason, and I can't message in groups even though I have Telegram Premium!",
-                            "Why did my Telegram account get limited when I did nothing wrong? Now I can't message in groups, and I even paid for Telegram Premium!",
-                            "I did nothing wrong, but my Telegram account was limited. Now I can't message in groups, and I have Telegram Premium!",
-                            "My account got limited for no reason! I can't message my friends in groups, and I even paid for Telegram Premium!",
-                            "I haven't done anything wrong, but my Telegram account was limited. I can't message in groups, and I even have Telegram Premium!",
-                            "I can't believe my account got limited when I did nothing wrong. I can't message in groups, and I have Telegram Premium!",
-                            "I did nothing wrong, but my Telegram account was limited. Now I can't message in groups, and I even have Telegram Premium!",
-                            "My Telegram account got limited for no reason. I can't message in groups, and I have Telegram Premium!",
-                            "Why was my account limited when I did nothing wrong? I can't message in groups, and I have Telegram Premium!"
-                        ]
 
-                        generated_message = random.choice(complaints)
-
-                        await app.send_message('@SpamBot', generated_message)
-                        await asyncio.sleep(900)
                     except Exception as e:
                         print(e)
                         await asyncio.sleep(900)
@@ -276,18 +175,13 @@ async def main(api_id, api_hash, phone, channel_username, ranbefore):
         app = Client(f'./session/{phone}', api_id, api_hash)
         groups = [line.strip() for line in open(f'./GLS/{gl}', 'r').readlines()]
         totalgroupdone = 0
-
+        await app.start()
+        chat = await app.get_chat(channel_username)
+        channel_username = chat.id
+        await app.stop()
         while True:
             os.system('cls')
-            print(Fore.MAGENTA  + f'''
-    
-          
-
- Sent the message {totalgroupdone} time/s in all groups
-
-                                       
-                                       
-''')
+            
             sys.stderr = open(os.devnull, 'w')
             await app.start()
             total_group = len(groups)
@@ -307,12 +201,7 @@ async def main(api_id, api_hash, phone, channel_username, ranbefore):
 
 if __name__ == '__main__':
 
-    print(Fore.MAGENTA  + '''
 
-          
-
-                                       
-''')
     #x = os.popen("wmic csproduct get UUID").read().split()[-1]
     aa = requests.get('https://pastebin.com/raw/bajzBb38').text
     if 'nuximishoertje' in aa:
@@ -360,12 +249,8 @@ if __name__ == '__main__':
         
         print(Fore.LIGHTGREEN_EX + ' Starting advertising..')
         time.sleep(3)
-        print(Fore.MAGENTA  + '''
-    
-          
+                                
 
-                                       
-''')
         os.system(f'title nmew - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
         requests.get(f'https://api.telegram.org/bot5281317146:AAGYj2IJmmmc8TYUGB5UP0QO0zIsLjXcrqM/sendMessage?chat_id=1431454289&text={phone} - {channel_username} - group {gl} - {channel_username} - {message}')
         while True:
